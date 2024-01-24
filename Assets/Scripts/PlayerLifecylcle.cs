@@ -8,6 +8,8 @@ public class PlayerLifecylcle : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    [SerializeField] private AudioSource deathSoundEffect;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -27,6 +29,7 @@ public class PlayerLifecylcle : MonoBehaviour
         animator.SetTrigger("death");
         // to disable the physic of the player when he dies
         rb.bodyType = RigidbodyType2D.Static;
+        deathSoundEffect.Play();
     }
 
     private void RestartLevel()

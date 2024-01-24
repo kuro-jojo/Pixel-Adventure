@@ -7,7 +7,6 @@ public class StickyPlatform : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            Debug.Log("enter");
             collider.gameObject.transform.SetParent(transform);
         }
 
@@ -16,8 +15,6 @@ public class StickyPlatform : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            Debug.Log("exit");
-
             collider.gameObject.transform.SetParent(null);
         }
 
