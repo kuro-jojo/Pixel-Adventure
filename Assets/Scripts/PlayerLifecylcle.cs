@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,13 +6,14 @@ public class PlayerLifecylcle : MonoBehaviour
     private string trapTag = "Trap";
     private Animator animator;
     private Rigidbody2D rb;
-
     [SerializeField] private AudioSource deathSoundEffect;
+    [SerializeField] private Transform start;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        Spawn();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,5 +35,10 @@ public class PlayerLifecylcle : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Spawn()
+    {
+        transform.position = start.position;
     }
 }

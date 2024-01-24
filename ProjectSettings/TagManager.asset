@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Cherry
   - Trap
+  - Start
+  - End
   layers:
   - Default
   - TransparentFX
